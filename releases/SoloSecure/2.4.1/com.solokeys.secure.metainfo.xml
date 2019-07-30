@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2019 Richard Hughes <richard@hughsie.com> -->
+<component type="firmware">
+  <id>com.solokeys.secure.firmware</id>
+  <name>Secure</name>
+  <summary>Firmware for the Solo Secure open source FIDO2 security key</summary>
+  <description>
+    <p>
+      Updating the firmware on your Solo device improves performance and adds
+      new features.
+    </p>
+  </description>
+  <provides>
+    <!-- USB\VID_0483&PID_A2CA -->
+    <firmware type="flashed">75509ff8-6d27-5dd4-b6c0-c2fccd49e236</firmware>
+  </provides>
+  <url type="homepage">http://www.8bitdo.com/fc30joystick/</url>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0+</project_license>
+  <developer_name>SoloKeys</developer_name>
+  <releases>
+    <release urgency="medium" version="2.4.1" date="2019-07-30">
+      <checksum filename="firmware-secure-2.4.1.json" target="content"/>
+      <url type="source">https://github.com/solokeys/solo/tree/2.4.1</url>
+      <description>
+        <p>
+          This stable release fixes the following issues:
+        </p>
+        <ul>
+          <li>Fix incorrect signature calculated when hmac-secret extension is used</li>
+          <li>Improve length check in USB request to increase fault resistance</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/hughsie/solokeys-lvfs/master/screenshots/secure.png</image>
+      <caption>Unplug the device, press and hold the button whilst re-inserting, and release when the light is flashing yellow.</caption>
+    </screenshot>
+  </screenshots>
+  <categories>
+    <category>X-Device</category>
+  </categories>
+  <keywords>
+    <keyword>u2f</keyword>
+    <keyword>fido</keyword>
+  </keywords>
+  <requires>
+    <id compare="ge" version="1.2.11">org.freedesktop.fwupd</id>
+  </requires>
+  <custom>
+    <value key="LVFS::UpdateProtocol">com.solokeys</value>
+    <value key="LVFS::VersionFormat">triplet</value>
+  </custom>
+</component>
